@@ -3050,7 +3050,7 @@ function checkCategory(selector) {
     // console.log('%c[차단 카테고리 리스트]', consoleStyles.listTitle, blocked);
 
     const posts = selector.querySelectorAll('.ub-content');
-    console.log('%c[글 리스트]', consoleStyles.listTitle, posts);
+    // console.log('%c[글 리스트]', consoleStyles.listTitle, posts);
 
     posts.forEach(post => {
         const categoryElem = post.querySelector('.gall_subject');
@@ -3061,12 +3061,12 @@ function checkCategory(selector) {
         const resultStyle = isBlocked ? consoleStyles.blocked : consoleStyles.passed;
         const resultText = isBlocked ? '차단됨' : '통과';
 
-        console.log('%c[카테고리 체크] %c%s %c→ %c%s',
-            consoleStyles.check,
-            consoleStyles.category, categoryText,
-            "", // 구분자
-            resultStyle, resultText
-        );
+        // console.log('%c[카테고리 체크] %c%s %c→ %c%s',
+        //     consoleStyles.check,
+        //     consoleStyles.category, categoryText,
+        //     "", // 구분자
+        //     resultStyle, resultText
+        // );
 
         if (isBlocked) {
             post.style.display = 'none';
