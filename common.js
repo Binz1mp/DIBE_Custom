@@ -3041,7 +3041,6 @@ const consoleStyles = {
 function checkCategory(selector) {
     if (!DIBESETTING.isblockcategory) return;
 
-
     const blocked = (DIBESETTING.blockcategoryList || '')
         .split(',')
         .map(s => s.trim())
@@ -3050,8 +3049,8 @@ function checkCategory(selector) {
 
     // console.log('%c[차단 카테고리 리스트]', consoleStyles.listTitle, blocked);
 
-    const posts = selector.querySelectorAll('.ub-content.us-post');
-    // console.log('%c[글 리스트]', consoleStyles.listTitle, posts);
+    const posts = selector.querySelectorAll('.ub-content');
+    console.log('%c[글 리스트]', consoleStyles.listTitle, posts);
 
     posts.forEach(post => {
         const categoryElem = post.querySelector('.gall_subject');
@@ -3095,7 +3094,7 @@ function initconsole() {
             'background: url('+ url +');'
             ].join(' ');
         console.log('%c ', style);
-        console.log("%cDIBE / Originally by Jasmin / Customized by Binz1mp                                \n%cDcinside Integrated Broadcast Environment\nv250501.2 (based on v250128.1)",
+        console.log("%cDIBE / Originally by Jasmin / Customized by Binz1mp                                \n%cDcinside Integrated Broadcast Environment\nv250501.3 (based on v250128.1)",
             "background-color: #505aa0; color: white; font-family: Arial; line-height: 90%; font-size:30px;", "");
             
     };
