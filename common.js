@@ -2945,6 +2945,7 @@ function refreshList(ajaxdata, isreplaceAll) {
         checkNewTab(table);
         checkWriter(table);
         checkdate(table);
+        checkCategory(table);
 
         LIST.replaceWith(table);
         LIST = document.getElementsByClassName('gall_list')[0];
@@ -3094,7 +3095,7 @@ function initconsole() {
             'background: url('+ url +');'
             ].join(' ');
         console.log('%c ', style);
-        console.log("%cDIBE / Originally by Jasmin / Customized by Binz1mp                                \n%cDcinside Integrated Broadcast Environment\nv250501.1 (based on v250128.1)",
+        console.log("%cDIBE / Originally by Jasmin / Customized by Binz1mp                                \n%cDcinside Integrated Broadcast Environment\nv250501.2 (based on v250128.1)",
             "background-color: #505aa0; color: white; font-family: Arial; line-height: 90%; font-size:30px;", "");
             
     };
