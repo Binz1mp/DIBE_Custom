@@ -1,0 +1,215 @@
+﻿@keyframes darkhighlight{
+    0% {
+        background-color: rgba(72, 72, 72, 1);
+        opacity:1
+    }
+    100% {
+        background-color: rgba(240, 248, 255, 0);
+        opacity:1
+    }
+
+}
+
+@keyframes highlight{
+    0% {
+        background-color: rgba(240, 248, 255, 1);
+        opacity:1
+    }
+    100% {
+        background-color: rgba(240, 248, 255, 0);
+        opacity:1
+    }
+
+}
+
+@keyframes darkloaderspin {
+    0% { transform: rotate(0deg);
+        box-shadow: 0 0 15px #707070;
+    }
+    5% {
+        box-shadow: 0 0 -10px #707070;
+    }
+    15%{
+        box-shadow: 0 0 0px #707070;
+    }
+    100% { transform: rotate(360deg);
+        box-shadow: 0 0 0px #707070;
+    }
+}
+
+@keyframes loaderspin {
+    0% { transform: rotate(0deg);
+        box-shadow: 0 0 15px #b5b8cb;
+    }
+    5% {
+        box-shadow: 0 0 -10px #b5b8cb;
+    }
+    15%{
+        box-shadow: 0 0 0px #b5b8cb;
+    }
+    100% { transform: rotate(360deg);
+        box-shadow: 0 0 0px #b5b8cb;
+    }
+}
+
+@keyframes vibration {
+    from {
+        transform: rotate(3deg);
+    }
+    to {
+        transform: rotate(-3deg);
+    }
+}
+
+@keyframes redtoblack {
+    from {
+        color: #d31900;
+    }
+    to {
+        color: #333333;
+    } 
+}
+
+@keyframes redtowhite {
+    from {
+        color: #d31900;
+    }
+    to {
+        color: #acacac;
+    } 
+}
+
+body, button, input, select, table, textarea {font-family: "맑은고딕","MalgunGothic" !important;}
+.put_inquiry, .input_box label{font-family: "맑은고딕","MalgunGothic" !important;}
+.gall_list .gall_num, .gall_list .gall_date, .gall_list .gall_count, .gall_list .gall_recommend,.comment_wrap,th,.view_content_wrap{font-family: "맑은고딕","MalgunGothic" !important;}
+
+td.gall_writer {position: static !important; text-overflow: ellipsis !important; white-space: nowrap !important; overflow:hidden !important;}
+span.gall_writer {white-space: nowrap !important;}
+
+#user_data_lyr{
+    left: unset !important;
+    top: unset !important;
+    margin-left: unset !important;
+}
+
+.nick_id {
+    display: contents !important;
+    max-width: 42%;
+    margin-left: -2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: tahoma,sans-serif;
+    font-size: 11px;
+    color: #999;
+}
+
+.gall_list .ip {
+    display: inline-block;
+    margin-left: 0px !important;
+}
+
+.gall_list .nickname{
+    display: inline-block;
+    max-width: 46% !important;
+}
+
+.gall_list .nickname.in{
+    display: inline-block;
+    max-width: 66% !important;
+}
+
+.ip_info {
+    display: contents !important;
+    max-width: 42%;
+    margin-left: -2px;
+    font-size: 11px;
+    letter-spacing: -0.05em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: text-top;
+    font-family: tahoma,sans-serif !important;
+}
+
+.cmt_nickbox{
+    width:161px !important;
+    margin-right:4px !important;
+}
+
+.comment_box .nickname{
+    display: inline-block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.comment_box .nickname.in{
+    display: inline-block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.comment_box .nickname > em{
+    max-width: 60px !important;
+}
+
+.comment_box .nickname.in > em{
+    max-width: 72px !important;
+}
+
+.comment_box .ip_info {
+    display: inline-block;
+    max-width: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: normal;
+    vertical-align: inherit;
+}
+
+.comment_box .nick_id {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /*max-width: none;*/
+}
+
+.ip_info.ip_pc {
+    color: #8FBC8F;
+}
+.ip_info.ip_mobile {
+    color: #6495ED;
+}
+.ip_info.ip_proxy {
+    color: #F08080;
+}
+
+.block-disable{display: none;}
+
+.ub-content.new{animation:highlight 1.5s;}
+.ub-content.newdark{animation:darkhighlight 1.5s;}
+
+.bottom_paging_box .vib{animation-name:vibration, redtoblack; animation-duration:0.05s, 0.3s; animation-iteration-count:infinite, 1; animation-direction:alternate, normal; animation-timing-function:ease-in-out, linear;}
+.bottom_paging_box .vibdark{animation-name:vibration, redtowhite; animation-duration:0.05s, 0.3s; animation-iteration-count:infinite, 1; animation-direction:alternate, normal; animation-timing-function:ease-in-out, linear;}
+
+/*.block-disable.new{visibility: visible;}*/
+
+#article_loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #505aa0;
+    border-radius: 50%;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 14 !important;
+    will-change: transform, opacity, scroll-position;
+}
+
+#article_loader.fixed {
+    top:160px;
+}

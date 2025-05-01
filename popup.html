@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        BODY {
+            margin: 0;
+            width: 250px;
+        }
+        textarea {box-sizing: border-box;}
+
+        .top {
+            background: #505aa0;
+            padding: 6px 8px 4px;
+            height: auto;
+        }
+
+        #title {
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .bottom {
+            background: #ffffff;
+            padding: 12px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            height: auto;
+        }
+
+        .bottom .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bottom .setting-item span {
+            flex: 1;
+        }
+
+        .bottom select {
+            margin-right: 8px;
+            padding: 4px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .bottom textarea {
+            width: 100%;
+            min-height: 60px;
+            margin-top: 4px;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+            resize: vertical;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 18px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 18px;
+            background-color: #e9e9e9;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 2px;
+            border-radius: 50%;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #949494;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+
+        /* force 상태 (숨김 고정) */
+        .slider.force {
+            background-color: #949494;
+            transition: none;
+        }
+
+        .slider.force:before {
+            left: 24px;
+            transition: none;
+        }
+
+        input:focus + .slider.force {
+            box-shadow: none;
+        }
+
+        #save {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #505aa0;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 8px;
+        }
+
+        #save:hover {
+            background-color: #404880;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <span id="title">
+            DIBE Custom<br>
+            v250501.1 (based on v250128.1)<br>
+            Originally by Jasmin<br>
+            Customized by Binz1mp<br>
+        </span>
+        
+    </div>
+    <div class="bottom">
+        <div class="setting-item">
+            <span>게시물 새 탭에서 열기</span>
+            <label class="switch">
+                <input type="checkbox" id="newtab">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>향상된 게시글 목록</span>
+            <label class="switch">
+                <input type="checkbox" id="pagination">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>차단 게시물 숨기기</span>
+            <label class="switch">
+                <input type="checkbox" id="hideblock">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>통신사 IP 차단</span>
+            <label class="switch">
+                <input type="checkbox" id="blockmobile">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>IP 정보 표시</span>
+            <label class="switch">
+                <input type="checkbox" id="checkip">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>비고정닉 ID 표시</span>
+            <label class="switch">
+                <input type="checkbox" id="nickid">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>기본 글꼴</span>
+            <label class="switch">
+                <input type="checkbox" id="defaultfont">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>다크 모드</span>
+            <label class="switch">
+                <input type="checkbox" id="darkmode">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>자동 갱신</span>
+            <div style="display: flex; align-items: center;">
+                <select id="refreshtime">
+                    <option value="3">3초</option>
+                    <option value="5">5초</option>
+                    <option value="10">10초</option>
+                </select>
+                <label class="switch">
+                    <input type="checkbox" id="refresh">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="setting-item">
+            <span>카테고리 차단</span>
+            <label class="switch">
+                <input type="checkbox" id="isblockcategory">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <textarea
+            name="blockcategoryList"
+            id="blockcategoryList"
+            placeholder="차단할 카테고리를 입력하세요.&#13;&#10;예: 자랑, 박제"
+        ></textarea>
+        <button id="save">저장</button>
+        <div id="status"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
