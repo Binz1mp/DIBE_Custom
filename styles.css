@@ -83,7 +83,7 @@ body, button, input, select, table, textarea {font-family: "맑은고딕","Malgu
 .put_inquiry, .input_box label{font-family: "맑은고딕","MalgunGothic" !important;}
 .gall_list .gall_num, .gall_list .gall_date, .gall_list .gall_count, .gall_list .gall_recommend,.comment_wrap,th,.view_content_wrap{font-family: "맑은고딕","MalgunGothic" !important;}
 
-td.gall_writer {position: static !important; text-overflow: ellipsis !important; white-space: nowrap !important; overflow:hidden !important;}
+/* td.gall_writer {position: static !important; text-overflow: ellipsis !important; white-space: nowrap !important; overflow:hidden !important;} */
 span.gall_writer {white-space: nowrap !important;}
 
 #user_data_lyr{
